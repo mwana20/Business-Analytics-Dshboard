@@ -1,0 +1,168 @@
+/* inventory.css */
+.inventory-alerts {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .inventory-alerts h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .alert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .alert-item:last-child {
+    border-bottom: none;
+  }
+  
+  .alert-product {
+    font-weight: 500;
+  }
+  
+  .alert-stock {
+    color: #e74c3c;
+  }
+  
+  .inventory-table-container {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .table-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .search-box input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+  }
+  
+  .filter-controls select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  #inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #inventory-table th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    font-weight: 500;
+  }
+  
+  #inventory-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  #inventory-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .stock-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .stock-status.in-stock {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+  }
+  
+  .stock-status.low-stock {
+    background-color: rgba(241, 196, 15, 0.1);
+    color: #f39c12;
+  }
+  
+  .stock-status.out-of-stock {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+  }
+  
+  .btn-view {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-view:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Modal form styles */
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .table-controls {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .search-box input {
+      width: 100%;
+    }
+    
+    .filter-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .filter-controls select {
+      margin-left: 0;
+      flex: 1;
+    }
+    
+    #inventory-table {
+      display: block;
+      overflow-x: auto;
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  }

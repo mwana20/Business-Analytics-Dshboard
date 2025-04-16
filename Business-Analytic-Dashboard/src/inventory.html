@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory | Business Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./css/dashboard.css" rel="stylesheet">
+  <link href="./css/inventory.css" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-icon">↑</div>
+        <h2>Business Dashboard</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="dashboard.html"><i class="icon-dashboard"></i> Dashboard</a></li>
+          <li><a href="sales.html"><i class="icon-sales"></i> Sales</a></li>
+          <li><a href="customers.html"><i class="icon-customers"></i> Customers</a></li>
+          <li class="active"><a href="inventory.html"><i class="icon-inventory"></i> Inventory</a></li>
+          <li><a href="marketing.html"><i class="icon-marketing"></i> Marketing</a></li>
+          <li><a href="reports.html"><i class="icon-reports"></i> Reports</a></li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn-logout">Log Out</button>
+      </div>
+    </aside>
+    
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Inventory Management</h1>
+        <div class="header-actions">
+          <button id="add-item-btn" class="btn-primary">Add New Item</button>
+          <button id="import-inventory-btn" class="btn-secondary">Import from Excel</button>
+        </div>
+      </header>
+      
+      <div class="inventory-alerts">
+        <h3>Low Stock Alerts</h3>
+        <div id="alerts-container">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
+      
+      <div class="inventory-table-container">
+        <div class="table-controls">
+          <div class="search-box">
+            <input type="text" id="inventory-search" placeholder="Search inventory...">
+          </div>
+          <div class="filter-controls">
+            <select id="category-filter">
+              <option value="">All Categories</option>
+              <!-- Filled dynamically -->
+            </select>
+            <select id="stock-filter">
+              <option value="">All Items</option>
+              <option value="low">Low Stock Only</option>
+              <option value="out">Out of Stock</option>
+            </select>
+          </div>
+        </div>
+        
+        <table id="inventory-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>SKU</th>
+              <th>Category</th>
+              <th>Current Stock</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add/Edit Item Modal -->
+  <div id="inventory-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modal-title">Add Inventory Item</h2>
+      <form id="inventory-form">
+        <input type="hidden" id="item-id">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="item-name">Product Name</label>
+            <input type="text" id="item-name" required>
+          </div>
+          <div class="form-group">
+            <label for="item-sku">SKU</label>
+            <input type="text" id="item-sku">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="item-category">Category</label>
+            <select id="item-category" required>
+              <!-- Filled dynamically -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="item-supplier">Supplier</label>
+            <input type="text" id="item-supplier">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="item-stock">Current Stock</label>
+            <input type="number" id="item-stock" min="0" required>
+          </div>
+          <div class="form-group">
+            <label for="item-threshold">Low Stock Threshold</label>
+            <input type="number" id="item-threshold" min="0" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="item-cost">Cost Price</label>
+            <input type="number" id="item-cost" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label for="item-price">Selling Price</label>
+            <input type="number" id="item-price" step="0.01" min="0" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="item-description">Description</label>
+          <textarea id="item-description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Save Item</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/utils.js" type="module"></script>
+  <script src="./js/inventory.js" type="module"></script>
+</body>
+</html>

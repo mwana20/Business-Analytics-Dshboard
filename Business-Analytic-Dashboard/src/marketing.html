@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing | Business Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./css/dashboard.css" rel="stylesheet">
+  <link href="./css/marketing.css" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-icon">↑</div>
+        <h2>Business Dashboard</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="dashboard.html"><i class="icon-dashboard"></i> Dashboard</a></li>
+          <li><a href="sales.html"><i class="icon-sales"></i> Sales</a></li>
+          <li><a href="customers.html"><i class="icon-customers"></i> Customers</a></li>
+          <li><a href="inventory.html"><i class="icon-inventory"></i> Inventory</a></li>
+          <li class="active"><a href="marketing.html"><i class="icon-marketing"></i> Marketing</a></li>
+          <li><a href="reports.html"><i class="icon-reports"></i> Reports</a></li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn-logout">Log Out</button>
+      </div>
+    </aside>
+    
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Marketing Performance</h1>
+        <div class="header-actions">
+          <button id="connect-ads-btn" class="btn-primary">Connect Ad Accounts</button>
+          <div class="date-selector">
+            <select id="marketing-period">
+              <option value="7">Last 7 Days</option>
+              <option value="30" selected>Last 30 Days</option>
+              <option value="90">Last 90 Days</option>
+              <option value="custom">Custom Range</option>
+            </select>
+          </div>
+        </div>
+      </header>
+      
+      <div class="marketing-metrics">
+        <div class="metric-card">
+          <h3>Ad Spend</h3>
+          <div class="metric-value" id="total-spend">$0</div>
+          <div class="metric-change" id="spend-change">0% vs last period</div>
+        </div>
+        <div class="metric-card">
+          <h3>Revenue</h3>
+          <div class="metric-value" id="total-revenue">$0</div>
+          <div class="metric-change" id="revenue-change">0% vs last period</div>
+        </div>
+        <div class="metric-card">
+          <h3>ROAS</h3>
+          <div class="metric-value" id="roas">0.00</div>
+          <div class="metric-desc">Return on Ad Spend</div>
+        </div>
+        <div class="metric-card">
+          <h3>CPA</h3>
+          <div class="metric-value" id="cpa">$0</div>
+          <div class="metric-desc">Cost Per Acquisition</div>
+        </div>
+      </div>
+      
+      <div class="marketing-charts">
+        <div class="chart-card">
+          <h3>Spend vs Revenue</h3>
+          <canvas id="spend-revenue-chart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Channel Performance</h3>
+          <canvas id="channel-chart"></canvas>
+        </div>
+      </div>
+      
+      <div class="campaigns-container">
+        <div class="table-header">
+          <h3>Campaign Performance</h3>
+          <div class="table-actions">
+            <input type="text" id="campaign-search" placeholder="Search campaigns...">
+          </div>
+        </div>
+        <table id="campaigns-table">
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Channel</th>
+              <th>Spend</th>
+              <th>Revenue</th>
+              <th>ROAS</th>
+              <th>Impressions</th>
+              <th>Clicks</th>
+              <th>CPA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Connect Ads Modal -->
+  <div id="connect-ads-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Connect Ad Accounts</h2>
+      <div class="ad-platforms">
+        <div class="platform-card">
+          <img src="./images/facebook-icon.png" alt="Facebook">
+          <h3>Facebook & Instagram</h3>
+          <button id="connect-fb-btn" class="btn-primary">Connect</button>
+        </div>
+        <div class="platform-card">
+          <img src="./images/google-icon.png" alt="Google">
+          <h3>Google Ads</h3>
+          <button id="connect-google-btn" class="btn-primary">Connect</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/utils.js" type="module"></script>
+  <script src="./js/marketing.js" type="module"></script>
+</body>
+</html>
