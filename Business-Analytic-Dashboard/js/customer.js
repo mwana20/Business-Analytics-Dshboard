@@ -33,6 +33,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Failed to load customer data:', error);
     alert('Failed to load customer data. Please try again.');
   }
+  
+  // Close menu on link click
+  document.querySelectorAll('.menu ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
 });
 
 function updateCustomerMetrics(metrics) {

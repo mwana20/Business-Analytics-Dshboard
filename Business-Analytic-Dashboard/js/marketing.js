@@ -196,4 +196,11 @@ function setupMarketingPageInteractions() {
       row.style.display = matchesSearch ? '' : 'none';
     });
   });
+  
+  // Menu link interactions
+  document.querySelectorAll('.menu ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
 }

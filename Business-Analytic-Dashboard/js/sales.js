@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Failed to load sales data:', error);
     alert('Failed to load sales data. Please try again.');
   }
+  
+  // Close menu toggle on link click
+  document.querySelectorAll('.menu ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
 });
 
 function createSalesTrendChart(trendData) {

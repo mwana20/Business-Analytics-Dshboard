@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Set up logout button
   document.getElementById('logout-btn').addEventListener('click', logout);
   
+  // Close menu on link click
+  document.querySelectorAll('.menu ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+  
   // Load dashboard data
   try {
     const token = localStorage.getItem('authToken');

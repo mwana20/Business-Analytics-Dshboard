@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+document.querySelectorAll('.menu ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('menu-toggle').checked = false;
+  });
+});
+
 function updateProfitLossReport(data) {
   // Update period label
   document.getElementById('report-period-label').textContent = data.period;
