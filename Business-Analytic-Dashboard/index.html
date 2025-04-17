@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Business Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="welcome-container">
+    <div class="welcome-card">
+      <div class="app-brand">
+        <div class="app-icon">↑</div>
+        <h1>Business Growth Dashboard</h1>
+      </div>
+      
+      <div class="welcome-message">
+        <h2>Welcome to Your Business Analytics Portal</h2>
+        <p>Gain valuable insights into your business performance with our comprehensive analytics dashboard. Track sales, customers, inventory, and marketing all in one place.</p>
+        
+        <div class="welcome-features">
+          <div class="feature">
+            <a href="../src/sales.html">
+              <div class="feature-icon">📊</div>
+              <h3>Sales Tracking</h3>
+              <p>Monitor your revenue trends and sales performance</p>
+            </a>
+          </div>
+          <div class="feature">
+            <a href="../src/customers.html">
+              <div class="feature-icon">👥</div>
+              <h3>Customer Insights</h3>
+              <p>Understand your customers' behavior and preferences</p>
+            </a>
+          </div>
+          <div class="feature">
+            <a href="../src/inventory.html">
+              <div class="feature-icon">📦</div>
+              <h3>Inventory Management</h3>
+              <p>Keep track of your stock levels and get low stock alerts</p>
+            </a>
+          </div>
+        </div>
+        
+        <button id="start-analysis-btn" class="btn-primary">Start Business Analysis</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/auth.js" type="module"></script>
+</body>
+</html>
